@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Digital</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Imagen Digital">
+        </div>
+        <nav id="navPrincipal">
+            <ul>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#cotiza">Cotiza ya</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+        <h3><span>(+598)</span> - 094 644 516</h3>
+    </header>
+
+    <main>
+        <div class="banner">
+            <div class="slider-container">
+                <div class="pattern-overlay"></div>
+                <div class="slider">
+                    <div class="slide active">
+                        <video autoplay loop muted>
+                            <source src="/img/sliders/slide_01.mp4" type="video/mp4">
+                            Tu navegador no soporta el tag de video.
+                        </video>
+                        <div class="banner-content">
+                            <p class="animate-p">Bienvenido a</p>
+                            <h2 class="animate-h2">IMAGEN DIGITAL</h2>
+                            <h3 class="animate-h3">
+                                <span class="color1">Diseño web</span>, 
+                                <span class="color2">Redes Sociales</span> & 
+                                <span class="color3">Marketing</span>
+                            </h3>
+                            <button class="conocenos-btn animate-btn">CONOCENOS</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/sliders/slide_02.jpg" alt="Cotización online">
+                        <div class="banner-content2">
+                            <p class="animate-p">obtén</p>
+                            <h2 class="animate-h2">TU COTIZACIÓN</h2>
+                            <h3 class="animate-h3">ONLINE YA</h3>
+                            <button class="empecemos-btn animate-btn">EMPECEMOS</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/sliders/slide_03.jpg" alt="Reforzamos su empresa">
+                        <div class="banner-content3">
+                            <h2 class="animate-h2">REFORZAMOS</h2>
+                            <h3 class="animate-h3">SU EMPRESA<br>EN INTERNET</h3>
+                            <div class="button-group">
+                                <button class="servicios-btn animate-btn">SERVICIOS</button>
+                                <button class="referencias-btn animate-btn">REFERENCIAS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav prev"></div>
+                <div class="slider-nav next"></div>
+            </div>
+        </div>
+        
+        <section id="primerInfo">
+            <div class="barraDecorativa"><img src="/img/vertical_line.png" alt=""></div>
+            <h2>Nuestro objetivo es potenciar su empresa</h2>
+            <p>Somos una empresa de la nueva generación con el objetivo de <span>maximizar el crecimiento de su empresa</span> y lograr incorporarla en un nuevo mercado como lo es el internet. Ofreciéndole todas las herramientas necesarias y haciendo que su negocio llegue a un nuevo nivel.</p>
+            <div class="barraDecorativa"><img src="/img/vertical_line.png" alt=""></div>
+        </section>
+        
+        <section id="servicios">
+                <div class="servicios-container">
+                <div class="servicio-item">
+                    <img src="img/icons/service_icon_1-1.png" alt="Branding de marcas">
+                    <h3>Branding de marcas</h3>
+                    <p>Nos encargaremos de crear o reconstruir la imagen de su empresa.</p>
+                </div>
+                <div class="servicio-item">
+                    <img src="img/icons/service_icon_2-1.png" alt="Diseño Web">
+                    <h3>Diseño Web</h3>
+                    <p>Todas nuestras páginas web corporativas son diseñadas a medida para dar una mejor respuesta a las necesidades de cada cliente.</p>
+                </div>
+                <div class="servicio-item">
+                    <img src="img/icons/service_icon_3-1.png" alt="Redes sociales">
+                    <h3>Redes sociales</h3>
+                    <p>Nos encargaremos de diseñar sus redes para potenciar el público de su empresa.</p>
+                </div>
+                <div class="servicio-item">
+                    <img src="img/icons/service_icon_4-1.png" alt="Diseño de Software específicos">
+                    <h3>Diseño de Software específicos</h3>
+                    <p>Diseñaremos un software consientes de sus requisitos y de acuerdo con sus especificaciones.</p>
+                </div>
+                <div class="servicio-item">
+                    <img src="img/icons/service_icon_5-1.png" alt="Administración y Mantenimiento">
+                    <h3>Administración y Mantenimiento</h3>
+                    <p>Tenemos planes de para sus redes sociales y páginas web.</p>
+                </div>
+                <div class="servicio-item">
+                    <img src="img/icons/service_icon_6-1.png" alt="Criptomonedas">
+                    <h3>Criptomonedas</h3>
+                    <p>Le implementaremos los sistemas específicos para el uso de criptomonedas en su negocio.</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="js/slider.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('header-scrolled', window.scrollY > 0);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevButton = document.querySelector('.slider-nav.prev');
+            const nextButton = document.querySelector('.slider-nav.next');
+            let currentSlide = 0;
+
+            function showSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            prevButton.addEventListener('click', prevSlide);
+            nextButton.addEventListener('click', nextSlide);
+        });
+    </script>
+</body>
+</html>
